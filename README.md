@@ -1,5 +1,6 @@
 
-## SMRF Cooja Simulation
+SMRF Cooja Simulation
+=====================
 
 This README explains how to set up and run a Cooja SMRF simulation on Contiki. 
 
@@ -15,11 +16,19 @@ Clone the contents of this repository into a new folder in the examples section,
 
 ## Setting up the Simulation
 
-After running Cooja, you have to create a new simulation. After a new simulation is created you must add two kinds of motes:
+After running Cooja, you have to create a new simulation with default settings. After a new simulation is created you must add two kinds of motes:
 
-- The fisrt kind is a root mote. Click `add mote`, select a Sky Mote and name it `root`. When selecting the firmware go to your `examples/ipv6/SMRF` folder, inside the Contiki Git files, and select `root.c` and then compile. After this, click `create` and add 1 instance of the root mote.
+- The fisrt kind is a root mote. Click on `Motes`, `Add mote`, `Create new mote type`, select a Sky Mote and name it `root`. When selecting the firmware go to your `examples/ipv6/SMRF` folder, inside the Contiki Git files, and select `root.c` and then compile. After this, click `create` and add 1 instance of the root mote.
 
-- The second kind is a sink mote. Click `add mote`, select a Sky Mote and name it `sink`. When selecting the firmware go to `examples/ipv6/SMRF` and select `sink.c` and compile it. After it's compiled, click `create` and add any number of instances of the sink mote.
+![alt text](https://raw.githubusercontent.com/mtsvr/smrf-sim/master/imgs/create_mote.png " ")
+
+![alt text](https://raw.githubusercontent.com/mtsvr/smrf-sim/master/imgs/compile_root.png " ")
+
+- The second kind is a sink mote. Go to `add mote`, select a Sky Mote and name it `sink`. When selecting the firmware go to `examples/ipv6/SMRF` and select `sink.c` and compile it. After it's compiled, click `create` and add any number of instances of the sink mote.
+
+![alt text](https://raw.githubusercontent.com/mtsvr/smrf-sim/master/imgs/compile_sink.png " ")
+
+There exists a third kind of mote: the intermediate. These motes, when added into the simulation, only forward the multicast packets but donot subscribe to the multicast group, so they dont receive the message themselves. To create these motes, it's only needed to load the `intermediate.c` firmware.
 
 ## Running the Simulation
 
@@ -34,6 +43,10 @@ After you have started running the simulation, you can go to the `view` window T
 The multicast communication will be shown as a message originating from the root node, and then Mote Output will list all the motes to which the message has arrived, in order of arrival.
 
 ![alt text](https://raw.githubusercontent.com/mtsvr/smrf-sim/master/imgs/mote_output_short.png " ")
+
+## Extras
+
+Included in this repository there is a document that can be used as guidelines to understand the behaviour of the different RPL based multicast schemes out there (SMRF, ESMRF and BMRF).
 
 
 
