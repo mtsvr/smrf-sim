@@ -1,5 +1,5 @@
 
-# SMRF Cooja Simulation
+## SMRF Cooja Simulation
 
 This README explains how to set up and run a Cooja SMRF simulation on Contiki. 
 
@@ -25,7 +25,15 @@ After running Cooja, you have to create a new simulation. After a new simulation
 
 After you have added the necessary motes for the simulation (which can be in any position), you can start the simulation by clicking on `start`. 
 
+![alt text](https://github.com/mtsvr/smrf-sim/tree/master/imgs/mote_view.png " ")
+
 After you have started running the simulation, you can go to the `view` window Tools and select `radio messages`, which will allow you to visualize the communication between motes. At first no multicast messages will be sent, but once the RPL tree has converged the root mote (which, if you created it first, will be mote number 1), will start sendind multicast messages. The multicast communication can be seen on the Mote Output window, as shown in the next figure.
+
+![alt text](https://github.com/mtsvr/smrf-sim/tree/master/imgs/mote_output.png " ")
+
+The multicast communication will be shown as a message originating from the root node, and then Mote Output will list all the motes to which the message has arrived, in order of arrival.
+
+![alt text](https://github.com/mtsvr/smrf-sim/tree/master/imgs/mote_output_short.png " ")
 
 
 
